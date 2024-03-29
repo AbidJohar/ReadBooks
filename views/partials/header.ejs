@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>ReadBooks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <% if(nav===true) {%>
+    <div id="nav" class="w-full pl-7 pr-2 py-3 z-50 flex justify-between items-center shadow-xl border-black bg-white fade-in">
+      <div class="imagtext flex items-center justify-center gap-3">
+        <i class="ri-school-fill font-bold text-3xl text-blue-950"></i>
+        <h1 style="font-family:Pacifico, cursive; font-weight: 600; font-size: larger; letter-spacing: 2px;" class="text-xl font-extrabold">ReadBooks</h1>
+      </div>
+      <div class="relative">
+        <input type="text" class="px-3 py-1 bg-gray-200 text-sm rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600" placeholder="Search...">
+        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 focus:outline-none">
+          <i class="ri-search-line"></i>
+        </button>
+      </div>
+    
+      <div class="flex gap-6 items-center">
+        <div class="anchortag">
+          <a class="text-sm font-extrabold" href="/"><i class="ri-home-4-line text-lg"></i> home</a>
+        </div>
+        <div class="anchortag">
+          <a class="text-sm font-extrabold" href="/category"><i class="ri-compass-line text-lg"></i> category</a>
+        </div>
+    
+        <div class="anchortag">
+          <a class="text-sm font-extrabold" href="/write"><i class="ri-pencil-fill text-lg"></i> writers</a>
+        </div>
+           <div class="anchortag">
+        <a  href="/profile">
+          <img   src="https://www.kindpng.com/picc/m/33-338711_circle-user-icon-blue-hd-png-download.png" height="60px" width="60px">
+        </a>
+      </div>
+      </div>
+    </div>
+    
+    
+    <% } %>
+    

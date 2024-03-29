@@ -1,0 +1,73 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  font-family:monospace;
+ }
+ html,body{
+  width: 100%;
+  height: 100%;
+ }
+ .anchortag {
+  display: inline-block;
+  margin-right: 10px; 
+  color: rgba(0, 0, 0,0.5);
+}
+
+.anchortag a {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease; /* Add smooth transition effect */
+}
+
+.anchortag a:hover {
+  /* opacity: 0.6; */
+  transform: scale(1.2);
+  color: rgba(0, 0, 0,0.9);
+}
+
+/* Smooth underline transition */
+.underline-transition {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-transition::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px; /* Change this value to adjust the thickness of the underline */
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline-transition:hover::before {
+  background-color: rgb(189, 31, 31); /* Red underline color */
+  transform: scaleX(2);
+}
+ .box:hover img{
+  scale: 1.1;
+  transition: all ease 0.8s;
+ }
+
+ /*scroll bar CSS style*/
+
+
+ .scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #dad7d7 transparent;
+  overflow-x: auto;
+}
+/* Animation */
+.scrollbar {
+  transition: all 0.3s ease-in-out;
+}
+
+ 
+
+
+ 
+
+  

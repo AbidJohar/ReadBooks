@@ -1,20 +1,24 @@
 <% include ./partials/header.ejs %>
 <div class="ProfileContainer w-full h-[85%] pt-5 px-20 relative">
     <!-- Background image div -->
-    <div class="backgroundimagDiv w-[100%] h-[45%] bg-green-500 relative">
-      <img class="w-full h-full object-cover" src="https://i.ytimg.com/vi/ozb_gKp-gUM/maxresdefault.jpg" >
-      <span id="uploadicon" class="w-10 h-10 border-[0.5px] border-zinc-500 hover:bg-red-500  bottom-0 right-0 bg-red-400 absolute flex items-center justify-center">
+    <div class="backgroundimagDiv w-[100%] h-[45%] bg-blue-400 relative">
+       
+      <!-- <span id="uploadicon" class="w-10 h-10 border-[0.5px] border-zinc-500 hover:bg-red-500  bottom-0 right-0 bg-red-400 absolute flex items-center justify-center">
         <i class=" text-zinc-800 ri-pencil-fill"></i>
-     </span>
+     </span> -->
+     <form id="uploadform" hidden  action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" >
+        <input type="submit">
+     </form>
       <div class=" absolute top-44 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32  rounded-full bg-white flex items-center justify-center ">
-        <img class="w-28 h-28 rounded-full " src="https://i.pinimg.com/736x/17/1a/be/171abed37f61b40f9e04a4192b0b9922.jpg" >
+        <img class="w-28 h-28 rounded-full bg-cover bg-zinc-400 bg-[url('https://th.bing.com/th/id/OIP.Gfp0lwE6h7139625a-r3aAHaHa?w=196&h=195&c=7&r=0&o=5&dpr=1.7&pid=1.7')] " src="/images/uploads/<%=finduser.profileimg%>" >
         <span id="uploadicon" class="w-7 h-7 border-[1px] border-black rounded-full bottom-3 right-2 bg-white absolute flex items-center justify-center">
-          <i class=" text-zinc-800 ri-pencil-fill"></i>
+          <i class="penicon text-zinc-800 ri-pencil-fill"></i>
        </span>
       </div>
     </div>
-      <h1 class="inline-block text-center font-bold text-lg mt-16 ml-96 pl-8">Johari Pro</h1>
-      <h1 class="inline-block text-center font-bold text-sm opacity-45 mb-6  ml-96 pl-5">Read by 0 people</h1>
+      <h1 class="inline-block text-center font-bold text-lg mt-16 ml-96 pl-14"><%=finduser.username %></h1>
+      <h1 class="inline-block text-center font-bold text-sm opacity-45 mb-6  ml-96 pl-9">Read by 0 people</h1>
           
       <div class="flex justify-center items-center">
         <a href="/adminpanel" class="font-semibold text-sm font-serif px-4 py-2 rounded-sm bg-blue-400 hover:bg-blue-600">Admin Panel</a>
@@ -38,5 +42,13 @@
         </div>
     </div>
   </div>
+  <script>
+   document.querySelector(".penicon").addEventListener("click", function(){
+      document.querySelector("#uploadform input").click();
+      document.querySelector("#uploadform input").addEventListener("change", function(){
+         document.querySelector("#uploadform").submit();
+      })
+   })
+  </script>
 
 <% include ./partials/footer.ejs %>

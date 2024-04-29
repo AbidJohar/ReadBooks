@@ -1,0 +1,45 @@
+<% include ./partials/header.ejs %>
+<div class="container mx-auto pl-3 py-8 flex flex-row">
+    <div class="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+      <h1 class="text-2xl font-semibold text-center p-4 ">SignIn</h1>
+      <form class="px-2 py-8" action="/userlogin" method="post" >
+         
+        <div class="mb-6">
+          <label for="username" class="block text-sm font-medium text-gray-700">username</label>
+          <input type="text" id="username" class="form-control block w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:ring-1" name="username" autocomplete="off" >
+        </div>
+        <div class="mb-2">
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" id="password" class="form-control block w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:ring-1" name="password" autocomplete="off" >
+        </div>
+        <a class="text-blue-800 text-sm inline-block mb-4" href="#">Forget password</a>
+        <div class="flex items-center justify-between mb-14">
+            <button type="submit" class="px-6 py-3 rounded-lg bg-indigo-500 text-white font-semibold tracking-tighter hover:bg-indigo-700">Login</button>
+             <p class="text-md text-gray-500  ml-4">Do not have an account?<a href="/usersignup" class="text-sm text-blue-700 hover:text-blue-800 ml-1">registor here</a> </p>
+           
+        </div>
+      </form>
+    </div>
+
+    <div class=" w-[35%] h-fit  rounded-lg overflow-hidden bg-[url('https://th.bing.com/th/id/R.4aaf0d7a821adeaba72b27bf0e70eaaa?rik=MQ8xoUBGRSxfjw&pid=ImgRaw&r=0')] object-cover bg-no-repeat ">
+      <div class="flex flex-col justify-center items-start mt-20">
+          <h1 class="text-lg font-semibold ml-10">SignUp through </h1> 
+          <h1 class=" mb-4 ml-12"><span class="text-blue-600 text-lg font-semibold">social</span> <span class="text-red-600 text-lg font-semibold">media</span></h1>
+          <!-- Google Sign In Button -->
+          <button class="bg-red-600 mb-3 hover:bg-red-700 text-white font-semibold py-2 px-[1.74rem] rounded-lg flex items-center space-x-2">
+              <i class="ri-google-line text-lg"></i>
+              <spa class="tracking-tighter">continue with Google</span>
+          </button>
+  
+          <!-- Facebook Sign In Button -->
+          <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-[1.15rem] rounded-lg flex items-center space-x-2">
+              <i class="ri-facebook-circle-line text-lg"></i>
+              <span class="tracking-tighter">continue with Facebook</span>
+          </button>
+      </div>
+  </div>
+
+
+  </div>
+   
+<% include ./partials/footer.ejs %>

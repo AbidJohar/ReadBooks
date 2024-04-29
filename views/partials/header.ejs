@@ -8,15 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <title>ReadBooks</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <% if(nav===true) {%>
-    <div id="nav" class="w-full pl-7 pr-2 py-3 z-50 flex justify-between items-center shadow-xl border-black bg-white fade-in">
+<div id="nav" class="w-full pl-7 pr-2 py-3 z-50 flex justify-between items-center  shadow-xl    border-black bg-white fade-in">
       <div class="imagtext flex items-center justify-center gap-3">
         <i class="ri-school-fill font-bold text-3xl text-blue-950"></i>
-        <h1 style="font-family:Pacifico, cursive; font-weight: 600; font-size: larger; letter-spacing: 2px;" class="text-xl font-extrabold">ReadBooks</h1>
+        <h1 style="font-family:Pacifico, cursive; font-weight: 600; font-size: larger; letter-spacing: 2px;" class="text-xl font-semibold">ReadBooks</h1>
       </div>
       <div class="relative">
         <input type="text" class="px-3 py-1 bg-gray-200 text-sm rounded-full focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-600" placeholder="Search...">
@@ -27,23 +30,60 @@
     
       <div class="flex gap-6 items-center">
         <div class="anchortag">
-          <a class="text-sm font-extrabold" href="/"><i class="ri-home-4-line text-lg"></i> home</a>
+          <a class="text-sm font-semibold" href="/"><i class="ri-home-4-line text-lg"></i> home</a>
         </div>
         <div class="anchortag">
-          <a class="text-sm font-extrabold" href="/category"><i class="ri-compass-line text-lg"></i> category</a>
+          <a class="text-sm font-semibold" href="/category"><i class="ri-compass-line text-lg"></i> category</a>
         </div>
     
         <div class="anchortag">
-          <a class="text-sm font-extrabold" href="/write"><i class="ri-pencil-fill text-lg"></i> writers</a>
+          <a class="text-sm font-semibold tracking-tight" href="/write"><i class="ri-pencil-fill text-lg"></i>Become a writer</a>
         </div>
-           <div class="anchortag">
-        <a  href="/profile">
-          <img   src="https://www.kindpng.com/picc/m/33-338711_circle-user-icon-blue-hd-png-download.png" height="60px" width="60px">
-        </a>
+        <% if(user == true) {%>
+          <div  class="anchortag w-[45px] h-[45px] bg-cover bg-[url('https://th.bing.com/th/id/OIP.Gfp0lwE6h7139625a-r3aAHaHa?w=196&h=195&c=7&r=0&o=5&dpr=1.7&pid=1.7')] flex items-center justify-center rounded-full">
+            <img onclick="togglemenu()" class="w-11 h-11 rounded-full " src="/images/uploads/<%=finduser.profileimg%>" >
+            <div class="sub-menu-wrap">
+              <div class="sub-menu">
+                 <div class="user-info w-96  flex flex-row items-center gap-2 mt-3">
+                  <div class="">
+                  <img class="w-10 h-10 bg-cover bg-[url('https://th.bing.com/th/id/OIP.Gfp0lwE6h7139625a-r3aAHaHa?w=196&h=195&c=7&r=0&o=5&dpr=1.7&pid=1.7')] rounded-full " src="/images/uploads/<%=finduser.profileimg%>" >
+                  </div>
+                  <div class="flex-col ">
+                    <h1 class="font-bold"><%=finduser.username%></h1>
+                  <h5 class="text-[11px] opacity-80 tracking-tight truncate"><%=finduser.email%></h5>
+                  </div>
+                </div>
+                <div class="w-full h-[2px] bg-slate-400 mt-2 mb-2"></div>
+                     <div class="flex flex-col">
+                    <a href="/profile"><i class="ri-profile-fill  text-lg font-bold  "></i> profile</a>
+                    <a href="#"><i class="ri-edit-box-line text-lg font-bold " ></i> Edit</a>
+                    <a href="#"><i class="ri-settings-2-line  text-lg font-bold "></i> setting & privacy</a>
+                    <a href="/logout"><i class="ri-logout-box-r-line  text-lg font-bold "></i> logout</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+  
+
+      
+      <% } else {%> 
+        <div class="flex justify-center items-center">
+          <a href="/usersignup" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full flex items-center">
+              <i class="ri-login-box-line text-lg"></i>
+              <span>Sign In</span>
+          </a>
       </div>
+              <% }%>
       </div>
     </div>
     
-    
     <% } %>
+    <script>
+      let dropdown = document.querySelector('.sub-menu-wrap');
+
+      function togglemenu(){
+        dropdown.classList.toggle('open-menu');
+      }
+
     
+   </script>

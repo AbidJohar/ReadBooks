@@ -1,9 +1,26 @@
-var express = require('express');
-var router = express.Router();
+const mongoose = require('mongoose');
+const plm = require('passport-local-mongoose');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+mongoose.connect('mongodb://127.0.0.1:27017/readbooks')
+
+// Define the schema
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  profileimg: String,
+  password:String,
+
 });
+userSchema.plugin(plm);
 
-module.exports = router;
+// Create a model using the schema
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
